@@ -8,6 +8,10 @@ This is the directory for the microcontroller that controls the fluid level of t
 1. Adafruit CircuitPython 7.3.3 https://circuitpython.org/board/trinket_m0/
 
 ## Circuit
+TRINKET PINS
+D1(A0) = INPUT = sensor_level
+D2 = OUTPUT = sensor_enable
+D4 = OUTPUT = Pump
 
 ## Code
 
