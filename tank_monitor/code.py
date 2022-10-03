@@ -1,3 +1,4 @@
+# https://github.com/sKr0d/hauntedhouse/blob/main/tank_monitor/code.py
 import time
 import board
 import pwmio
@@ -5,11 +6,11 @@ import pwmio
 from digitalio import DigitalInOut, Direction, Pull
 from analogio import AnalogIn
 
-sensor_enable = DigitalInOut(board.A0) # Pin to power on the sensor
+sensor_enable = DigitalInOut(board.D3) # Pin to power on the sensor
 sensor_enable.switch_to_output()
-sensor_level = AnalogIn(board.A1) # Pin to read the sensor
+sensor_level = AnalogIn(board.A0) # Pin to read the sensor
 
-pump = DigitalInOut(board.D2)  # Pin to control the pump
+pump = DigitalInOut(board.D4)  # Pin to control the pump
 pump.direction = Direction.OUTPUT
 pump.value = False # start with the pump turned off
 
