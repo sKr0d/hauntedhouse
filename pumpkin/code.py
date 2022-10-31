@@ -7,12 +7,19 @@ import time
 import board
 import neopixel
 import random
+import pwmio
 
 pixel_pin = board.A0
 num_pixels = 21
 
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=1.0, auto_write=False, pixel_order=(1, 0, 2, 3))
 
+fan_pin = board.A1
+fan = pwmio.PWMOut(fan_pin, frequency=25000, duty_cycle=0)
+fan.duty_cycle = 0
+
+fan_low = 16384
+fan_high = 65535
 
 def colorwheel(pos):
     # Input a value 0 to 255 to get a color value.
@@ -48,6 +55,8 @@ BLACK = (0, 0, 0, 0)
 while True:
     ss = random.randint(2, 5)
     print(f'FLASH',ss)
+    print(f'FAN high')
+    fan.duty_cycle = fan_high
     for i in range (ss):
         pixels.fill(WHITE)
         pixels.show()
@@ -57,7 +66,16 @@ while True:
         pixels.show()
         time.sleep(0.01)
 
+    pixels.fill(PURPLE)
+    pixels.show()
+    time.sleep(2)
+    pixels.fill(WHITE)
+    pixels.show()
+
+    print(f'FAN low')
+    fan.duty_cycle = fan_low
     rr = random.randint(1, 5)
     print(f'RAINBOW', rr)
     for i in range (rr):
         rainbow_cycle(0.02)  # Increase the number to slow down the rainbow
+

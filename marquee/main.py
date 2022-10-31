@@ -1,4 +1,3 @@
-#https://github.com/sKr0d/hauntedhouse/blob/main/marquee/main.py
 import time
 import board
 import neopixel
@@ -115,13 +114,30 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
+'''
+def led_cycle(wait):
+    for i in range(100):
+        if i < 50:
+            ldc = int(i * 2 * 65535 / 100)
+            led.duty_cycle = ldc
+        else:
+            ldc = 65535 - int((i - 50) * 2 * 65535 / 100)
+            led.duty_cycle = ldc
+        time.sleep(0.01)
+'''
+
 while True:
     flash(ORANGE,2)
     repeat = randrange(8)
     for i in range (repeat):
         print(f'rainbow cycle')
         rainbow_cycle(0.01)
-
+    '''
+    repeat = randrange(2,8)
+    for k in range (repeat):
+        chase_cw(ORANGE)
+        chase_ccw(PURPLE)
+    '''
     flash(PURPLE,2)
     repeat = randrange(8,40)
     for j in range (repeat):
