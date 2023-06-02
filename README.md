@@ -13,3 +13,4 @@ This repository contains several directories for different devices involved in t
 4. pumpkin -- The microcontroller that handles the lighting inside the candy delivery pumpkin inside the house.
 5. tank_monitor -- The microcontroller that ensures that the bubble tank is full.
 
+** Sad to say that the haunted house was destroyed in the heavy wind/rain in California over the winter months.  It was too big to store in the garage, it got wet, and then the heavy wind finished it off.  :( **
